@@ -79,23 +79,23 @@
     }
   }
 
-  const SALES_PHONE = "79301288566";
   const leadForm = document.querySelector("[data-lead-form]");
   leadForm?.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(leadForm);
     const clean = (value) => String(value || "").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "").trim();
     const text = [
-      "Здравствуйте! Заявка с сайта Asiales.",
+      "Здравствуйте! Заявка с сайта Транзит Азия-Лес.",
       "",
       `Имя: ${clean(data.get("name"))}`,
       `Компания: ${clean(data.get("company"))}`,
       `Телефон: ${clean(data.get("phone"))}`,
+      `Почта: ${clean(data.get("email"))}`,
       "",
       "Сообщение:",
       clean(data.get("message")),
     ].join("\n").slice(0, 1500);
-    window.location.href = `sms:+${SALES_PHONE}?body=${encodeURIComponent(text)}`;
+    window.location.href = `https://max.ru/:share?text=${encodeURIComponent(text)}`;
     leadForm.reset();
   });
 })();

@@ -630,12 +630,6 @@ h2 {
   padding: 48px 44px;
 }
 
-.lead__intro p {
-  margin: 14px 0 0;
-  color: var(--muted);
-  max-width: 380px;
-}
-
 .lead__form {
   display: grid;
   gap: 16px;
